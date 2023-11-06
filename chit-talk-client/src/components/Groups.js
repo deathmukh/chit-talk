@@ -2,7 +2,6 @@ import React from 'react'
 import logo from '../icons/communication.png';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton } from '@mui/material';
-
 export default function Groups() {
     return (
         <div className='list-container'>

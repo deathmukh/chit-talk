@@ -69,9 +69,6 @@
     transition-duration: 0.5ms;
 }
 
-.conversation-container:hover {
-    background-color: #9d63d7;
-}
 
 .conversation-container:active {
     background-color: #fff;
