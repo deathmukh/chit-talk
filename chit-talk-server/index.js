@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv = require("dotenv");
 const { default: mongoose } = require('mongoose');
+const userRoutes = require("./Routes/userRoutes");
 
 const app = express();
 dotenv.config()
@@ -11,7 +12,7 @@ const connectDb = async () => {
         console.log("Server is connected to database")
     }
     catch (err) {
-        console.log("Error connecting to database",err.message)
+        console.log("Error connecting to database", err.message)
     }
 
 }
@@ -19,7 +20,7 @@ connectDb();
 app.get("/", (req, res) => {
     res.send("api chaltoy hehehe")
 });
-
+app.use("user/", userRoutes)
 
 
 const PORT = process.env.PORT || 5000;
