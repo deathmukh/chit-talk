@@ -5,7 +5,7 @@ const userRoutes = require("./Routes/userRoutes");
 
 const app = express();
 dotenv.config()
-
+app.use(express.json());
 const connectDb = async () => {
     try {
         const connect = await mongoose.connect(process.env.MONGO_URI)
@@ -20,7 +20,7 @@ connectDb();
 app.get("/", (req, res) => {
     res.send("api chaltoy hehehe")
 });
-app.use("user/", userRoutes)
+app.use("/user", userRoutes)
 
 
 const PORT = process.env.PORT || 5000;
